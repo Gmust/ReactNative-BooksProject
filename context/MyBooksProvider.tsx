@@ -1,6 +1,7 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {Alert} from "react-native";
+import {Book} from "../Book";
 
 type MyBooksContextType = {
     isBookSaved: (book: Book) => boolean;

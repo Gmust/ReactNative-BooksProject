@@ -4,6 +4,7 @@ import {useState} from "react";
 import {BookFooter} from "./BookFooter";
 import {Book} from "../../Book";
 import {BookHeader} from "./BookHeader";
+import {BookActionsPopUp} from "./popUp/BookActionsPopUp";
 
 
 type BookItemProps = {
@@ -22,6 +23,7 @@ export const BookItem = ({book}: BookItemProps) => {
                     <BookHeader showDesc={showDesc} setShowDesc={setShowDesc} book={book}/>
                     <BookFooter showDesc={showDesc} setShowDesc={setShowDesc} book={book}/>
                 </View>
+                <BookActionsPopUp image={book.image} title={book.title} authors={book.authors} isbn={book.isbn}/>
             </View>
 
         </>
