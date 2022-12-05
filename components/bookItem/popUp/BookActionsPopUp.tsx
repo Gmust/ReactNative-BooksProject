@@ -4,15 +4,17 @@ import {styles} from "./styles";
 import {MaterialCommunityIcons, MaterialIcons} from "@expo/vector-icons";
 import {Separator} from "../../../assets/Separator/Separator";
 import {Book} from "../../../Book";
+import {useMyBooks} from "../../../context/MyBooksProvider";
 
 export const BookActionsPopUp = (book: Book) => {
 
+    const {onToggleRead} = useMyBooks();
 
     return (
         <Menu>
             <MenuTrigger><MaterialCommunityIcons name="dots-vertical" size={24} color="black"/></MenuTrigger>
             <MenuOptions customStyles={{optionsContainer: styles.optionsContainer}}>
-                <MenuOption>
+                <MenuOption onSelect={() => onToggleRead(book)}>
                     <Text style={{color: 'green'}}>
                         Already read <MaterialIcons name="done-outline" size={15} color="green"/>
                     </Text>
